@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Untuk Kamu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="ambient-layer" id="ambientLayer"></div>
+
+  <div class="stage">
+
+    <!-- ============ LOADER ============ -->
+    <div id="loader">
+      <div class="loader-card">
+        <div class="loader-tape"></div>
+        <div class="loader-heart">♥</div>
+        <div class="loader-label" id="loaderLabel">memuat kenangan...</div>
+        <div class="loader-bar">
+          <div class="loader-bar-fill" id="loaderFill"></div>
+        </div>
+        <div class="loader-percent" id="loaderPercent">0%</div>
+      </div>
+    </div>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero">
+      <div class="torn-note hero-card reveal" style="--tilt:-2.5deg">
+        <div class="pin"></div>
+        <span class="hero-eyebrow" id="heroEyebrow">untuk kamu,</span>
+        <h1 id="heroTitle">Selamat <em>Hari Bahagia</em></h1>
+        <p class="hero-sub" id="heroSub">ada beberapa hal yang ingin aku sampaikan...</p>
+      </div>
+      <div class="scroll-cue">
+        <span>geser ke bawah</span>
+        <span class="arrow"></span>
+      </div>
+    </section>
+
+    <!-- ============ MEMORY NOTES (populated by JS) ============ -->
+    <section id="memories"></section>
+
+    <!-- ============ GALLERY (populated by JS) ============ -->
+    <section id="gallery">
+      <div class="section-title reveal">
+        <span class="hand">sekeping waktu</span>
+        <h2>galeri kenangan</h2>
+      </div>
+      <div class="polaroid-grid" id="polaroidGrid"></div>
+    </section>
+
+    <!-- ============ CLOSING ============ -->
+    <section id="closing">
+      <div id="closingMessage"></div>
+      <div class="cassette-card reveal" style="--tilt:-1.5deg">
+        <div class="earbud-line"></div>
+        <div class="cassette-title" id="playlistTitle">lagu kita berdua</div>
+        <div class="cassette-window" id="cassetteWindow">♪ ♥</div>
+        <div class="cassette-controls">⏮ ▶ ⏭</div>
+        <div class="cassette-bar"></div>
+        <a class="cassette-stream" id="playlistLink" href="#">putar sekarang</a>
+      </div>
+      <div class="signoff reveal">
+        <span class="hand" id="signoffText">sampai jumpa di kenangan berikutnya.</span>
+        <span class="from" id="fromText">— dari aku, untukmu</span>
+      </div>
+    </section>
+
+    <!-- ============ FLOATING MUSIC WIDGET ============ -->
+    <div class="music-widget" id="musicWidget">
+      <div class="music-disc" id="musicDisc">
+        <div class="disc-label" id="discLabel"></div>
+      </div>
+      <div class="music-info">
+        <div class="music-info-row">
+          <div class="music-thumb" id="musicThumb">♪</div>
+          <div class="music-text">
+            <div class="music-eyebrow">sedang diputar</div>
+            <div class="music-title" id="musicWidgetTitle">Lagu Kita</div>
+          </div>
+        </div>
+      </div>
+      <div class="music-eq"><span></span><span></span><span></span></div>
+    </div>
+
+  </div>
+  <script src="data.js"></script>
+
+</body>
+
+</html>
