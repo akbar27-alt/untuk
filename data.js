@@ -208,6 +208,7 @@ if (CONFIG.musicSrc) {
 let visualPlaying = false; // only used when there's no audio file — lets the disc still spin visually
 let collapseTimer = null;
 let pendingResume = null; // holds the single pending "resume on next tap" listener, if any
+let playPromisePending = false; // true while audio.play() hasn't resolved/rejected yet
 
 function scheduleCollapse(delay = 4200) {
     clearTimeout(collapseTimer);
@@ -244,11 +245,19 @@ function startPlayback() {
         return;
     }
     if (!audio.paused) return; // already playing — never call play() again on top of itself
+    playPromisePending = true;
     audio.play().then(() => {
+        playPromisePending = false;
         clearPendingResume();
         syncPlayingClass();
-    }).catch(() => {
+    }).catch((err) => {
+        playPromisePending = false;
         syncPlayingClass(); // browser blocked it — UI reflects the real (paused) state
+        // AbortError = play() ini sengaja diinterupsi oleh pause() kita sendiri
+        // (misalnya user tap pause dengan cepat). Itu BUKAN autoplay yang diblokir,
+        // jadi jangan pasang listener resume — kalau tidak, musik akan nyala lagi
+        // sendiri di tap berikutnya walau user baru saja memilih pause.
+        if (err && err.name === 'AbortError') return;
         if (pendingResume) return; // a resume listener is already waiting, don't stack another
         pendingResume = () => {
             clearPendingResume();
@@ -262,7 +271,13 @@ function startPlayback() {
 function stopPlayback() {
     clearPendingResume();
     if (audio) {
-        audio.pause();
+        if (playPromisePending) {
+            // play() masih diproses browser — tunda pause() sampai selesai,
+            // supaya tidak memicu AbortError dan status play/pause tetap konsisten
+            audio.play().finally(() => audio.pause());
+        } else {
+            audio.pause();
+        }
     } else {
         visualPlaying = false;
     }
