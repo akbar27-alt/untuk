@@ -34,8 +34,8 @@ const CONFIG = {
     // Placeholder foto — ganti isi array ini dengan URL foto asli kamu nanti
     // contoh: { src: "foto1.jpg", caption: "waktu itu..." }
     photos: [
-        { src: "https://i.imgur.com/46u3P5n.jpeg", caption: "taruh foto pertama di sini" },
-        { src: "https://i.imgur.com/fEcNhIJ.jpeg", caption: "taruh foto kedua di sini" },
+        { src: "img/5b60ea73-250e-4a50-9fab-addf411ebb45.jpeg", caption: "taruh foto pertama di sini" },
+        { src: "", caption: "taruh foto kedua di sini" },
         { src: "https://i.imgur.com/YoSXyZq.jpeg", caption: "taruh foto ketiga di sini" }
     ],
 
