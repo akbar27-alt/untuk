@@ -36,7 +36,7 @@ const CONFIG = {
     photos: [
         { src: "https://i.imgur.com/46u3P5n.jpeg", caption: "taruh foto pertama di sini" },
         { src: "https://i.imgur.com/fEcNhIJ.jpeg", caption: "taruh foto kedua di sini" },
-        { src: "img/img/7c5b06a4-c0dc-4922-a954-0860090cf022.jpeg", caption: "taruh foto ketiga di sini" }
+        { src: "https://i.imgur.com/YoSXyZq.jpeg", caption: "taruh foto ketiga di sini" }
     ],
 
     galleryEyebrow: "sekeping waktu",
