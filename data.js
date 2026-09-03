@@ -34,9 +34,9 @@ const CONFIG = {
     // Placeholder foto — ganti isi array ini dengan URL foto asli kamu nanti
     // contoh: { src: "foto1.jpg", caption: "waktu itu..." }
     photos: [
-        { src: "Img1.jpeg", caption: "taruh foto pertama di sini" },
-        { src: "Img2.jpeg.jpeg", caption: "taruh foto kedua di sini" },
-        { src: "Img4.jpeg.jpeg", caption: "taruh foto ketiga di sini" }
+        { src: "Img1.jpeg", caption: "Satu foto, sejuta cerita. Terima kasih sudah menjadi rumah, tempat pulang, dan teman dalam setiap perjalanan. Selamat ulang tahun, istriku ❤️ Semoga kita selalu bersama, sampai tua nanti" },
+        { src: "Img2.jpeg.jpeg", caption: "Momen sederhana yang selalu punya cerita. Semoga senyum dan kebersamaan ini terus ada di setiap langkah kita. Selamat ulang tahun, sayang ❤️" },
+        { src: "Img4.jpeg.jpeg", caption: "Dan akhirnya, dari sekian banyak momen, ini yang paling ingin aku simpan selamanya. Hari ketika kita memilih untuk berjalan bersama. Selamat ulang tahun, istriku ❤️ Semoga sampai kapan pun, tetap kita." }
     ],
 
     galleryEyebrow: "sekeping waktu",
